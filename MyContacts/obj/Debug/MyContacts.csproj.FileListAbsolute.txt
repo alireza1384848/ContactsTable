@@ -1,0 +1,11 @@
+F:\Practice\MyContacts\MyContacts\bin\Debug\MyContacts.exe.config
+F:\Practice\MyContacts\MyContacts\bin\Debug\MyContacts.exe
+F:\Practice\MyContacts\MyContacts\bin\Debug\MyContacts.pdb
+F:\Practice\MyContacts\MyContacts\obj\Debug\MyContacts.csproj.AssemblyReference.cache
+F:\Practice\MyContacts\MyContacts\obj\Debug\MyContacts.Form1.resources
+F:\Practice\MyContacts\MyContacts\obj\Debug\MyContacts.Properties.Resources.resources
+F:\Practice\MyContacts\MyContacts\obj\Debug\MyContacts.csproj.GenerateResource.cache
+F:\Practice\MyContacts\MyContacts\obj\Debug\MyContacts.csproj.CoreCompileInputs.cache
+F:\Practice\MyContacts\MyContacts\obj\Debug\MyContacts.exe
+F:\Practice\MyContacts\MyContacts\obj\Debug\MyContacts.pdb
+F:\Practice\MyContacts\MyContacts\obj\Debug\MyContacts.FrmAddorEdit.resources
