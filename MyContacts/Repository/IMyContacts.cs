@@ -13,5 +13,7 @@ namespace MyContacts
         bool delete(int contactid);
         DataTable SelectAll();
         DataTable SelectRow(int contactid);
+
+        DataTable Search(string parameters);
     }
 }

@@ -62,6 +62,17 @@ namespace MyContacts.services
             }
         }
 
+        public DataTable Search(string parameters)
+        {
+            string quary = "Select * From contantsTable where Name like @parameter or Family like @parameter";
+            SqlConnection connection = new SqlConnection(Address);
+            SqlDataAdapter sqlData = new SqlDataAdapter(quary, connection);
+            sqlData.SelectCommand.Parameters.AddWithValue("@parameter", "%" + parameters + "%");
+            DataTable dt = new DataTable();
+            sqlData.Fill(dt);
+            return dt;
+        }
+
         public DataTable SelectAll()
         {
             string quary = "Select * From contantsTable";

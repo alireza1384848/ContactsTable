@@ -93,5 +93,12 @@ namespace MyContacts
             }
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            dgcontacts.DataSource=myContacts.Search(textBox1.Text);
+
+
+        }
     }
 }
