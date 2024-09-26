@@ -39,7 +39,7 @@ namespace MyContacts
 
         private void btnAddContact_Click(object sender, EventArgs e)
         {
-            FrmAddorEdit frm = new FrmAddorEdit();
+            FrmAddorEdit frm = new FrmAddorEdit(0);
             frm.ShowDialog();
             if (frm.DialogResult == DialogResult.OK)
             {
@@ -54,7 +54,18 @@ namespace MyContacts
 
         private void btnupdate_Click(object sender, EventArgs e)
         {
-           
+            if (dgcontacts.CurrentRow != null)
+            {
+                int id = (int)dgcontacts.CurrentRow.Cells[0].Value;
+                FrmAddorEdit frm1 = new FrmAddorEdit(id);
+                if (frm1.ShowDialog() == DialogResult.OK) {
+                    bindGrid();
+                }
+            }
+            else 
+            {
+                MessageBox.Show("لطفا سطر مورد نظر خود را انتخاب کنید.", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 

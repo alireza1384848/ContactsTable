@@ -14,14 +14,37 @@ namespace MyContacts
     public partial class FrmAddorEdit : Form
     {
         IMyContacts myContacts;
-        public FrmAddorEdit()
+        private int contactId = 0;
+        public FrmAddorEdit(int contactid)
         {
             InitializeComponent();
+            this.contactId = contactid;
             myContacts = new ContactsRepo();
         }
 
         private void FrmAddorEdit_Load(object sender, EventArgs e)
         {
+            if (this.contactId == 0)
+            {
+                this.Text = "افزودن شخض جدید";
+                btnsubmit.Text = "ثبت";
+            }
+            else
+            {
+                this.Text = "ویرایش شخص";
+                btnsubmit.Text = "ویرایش";
+                DataTable dt = myContacts.SelectRow(contactId);
+                txtName.Text = dt.Rows[0][1].ToString();
+                txtFamily.Text = dt.Rows[0][2].ToString();
+                txtMobile.Text = dt.Rows[0][4].ToString();
+                txtAddres.Text = dt.Rows[0][5].ToString();
+                txtAge.Text = dt.Rows[0][3].ToString();
+                txtEmail.Text = dt.Rows[0][6].ToString();
+
+            }
+
+
+
 
         }
 
@@ -62,7 +85,16 @@ namespace MyContacts
         {
             if (Verify_Incomes())
             {
-                bool is_successful = myContacts.Insert(txtName.Text, txtFamily.Text, txtMobile.Text, txtAddres.Text, (int)txtAge.Value, txtEmail.Text);
+                bool is_successful = true;
+                if (contactId == 0)
+                {
+                     is_successful = myContacts.Insert(txtName.Text, txtFamily.Text, txtMobile.Text, txtAddres.Text, (int)txtAge.Value, txtEmail.Text);
+                }
+                else
+                {
+                    is_successful = myContacts.update(contactId, txtName.Text, txtFamily.Text, txtMobile.Text, txtAddres.Text, (int)txtAge.Value, txtEmail.Text);
+                }
+
                 if (is_successful)
                 {
                     MessageBox.Show("عملیات باموفقیت انجام شد.", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -71,11 +103,12 @@ namespace MyContacts
                 else
                 {
                     MessageBox.Show("مشکلی در انجام عملیات پیش آمد.", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    DialogResult= DialogResult.Cancel;
+                    DialogResult = DialogResult.Cancel;
                 }
 
 
             }
+
         }
     }
 }
