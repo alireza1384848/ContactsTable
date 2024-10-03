@@ -18,7 +18,7 @@ namespace MyContacts
         public Form1()
         {
             InitializeComponent();
-            myContacts = new ContactsRepo();
+            myContacts = new EnContactsrRepo();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -28,6 +28,7 @@ namespace MyContacts
 
         private void bindGrid()
         {
+           
             dgcontacts.AutoGenerateColumns = false;
             dgcontacts.DataSource = myContacts.SelectAll();
         }
@@ -56,7 +57,7 @@ namespace MyContacts
         {
             if (dgcontacts.CurrentRow != null)
             {
-                int id = (int)dgcontacts.CurrentRow.Cells[0].Value;
+                int id = int.Parse(dgcontacts.CurrentRow.Cells["ContactID"].Value.ToString());
                 FrmAddorEdit frm1 = new FrmAddorEdit(id);
                 if (frm1.ShowDialog() == DialogResult.OK) {
                     bindGrid();
@@ -78,7 +79,7 @@ namespace MyContacts
                 string fullname = name + " " + family;
                 if (MessageBox.Show($"آیا از حذف فرد مورد نظر اطمینان دارید ؟ ", "توجه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    int id = (int)dgcontacts.CurrentRow.Cells[0].Value;
+                    int id = int.Parse(dgcontacts.CurrentRow.Cells["ContactID"].Value.ToString());
                     //MessageBox.Show(id.ToString());
                     if (myContacts.delete(id) == true)
                         bindGrid();

@@ -19,7 +19,7 @@ namespace MyContacts
         {
             InitializeComponent();
             this.contactId = contactid;
-            myContacts = new ContactsRepo();
+            myContacts = new EnContactsrRepo();
         }
 
         private void FrmAddorEdit_Load(object sender, EventArgs e)

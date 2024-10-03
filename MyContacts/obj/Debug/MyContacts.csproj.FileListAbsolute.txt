@@ -9,3 +9,8 @@ F:\Practice\MyContacts\MyContacts\obj\Debug\MyContacts.csproj.CoreCompileInputs.
 F:\Practice\MyContacts\MyContacts\obj\Debug\MyContacts.exe
 F:\Practice\MyContacts\MyContacts\obj\Debug\MyContacts.pdb
 F:\Practice\MyContacts\MyContacts\obj\Debug\MyContacts.FrmAddorEdit.resources
+F:\Practice\MyContacts\MyContacts\bin\Debug\EntityFramework.dll
+F:\Practice\MyContacts\MyContacts\bin\Debug\EntityFramework.SqlServer.dll
+F:\Practice\MyContacts\MyContacts\bin\Debug\EntityFramework.xml
+F:\Practice\MyContacts\MyContacts\bin\Debug\EntityFramework.SqlServer.xml
+F:\Practice\MyContacts\MyContacts\obj\Debug\MyContacts.csproj.CopyComplete

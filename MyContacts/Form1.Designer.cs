@@ -30,21 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgcontacts = new System.Windows.Forms.DataGridView();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnAddContact = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.btnupdate = new System.Windows.Forms.Button();
+            this.btndelete = new System.Windows.Forms.Button();
             this.ContactID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Family = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnAddContact = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.btnupdate = new System.Windows.Forms.Button();
-            this.btndelete = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgcontacts)).BeginInit();
@@ -61,6 +61,23 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "جستوجو";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(292, 36);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(401, 23);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(699, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "جستوجو :";
             // 
             // groupBox2
             // 
@@ -93,6 +110,60 @@
             this.dgcontacts.Size = new System.Drawing.Size(770, 397);
             this.dgcontacts.TabIndex = 0;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnAddContact,
+            this.toolStripButton2});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(783, 27);
+            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnAddContact
+            // 
+            this.btnAddContact.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnAddContact.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnAddContact.Image = ((System.Drawing.Image)(resources.GetObject("btnAddContact.Image")));
+            this.btnAddContact.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAddContact.Name = "btnAddContact";
+            this.btnAddContact.Size = new System.Drawing.Size(109, 24);
+            this.btnAddContact.Text = "افزودن مخاطب";
+            this.btnAddContact.Click += new System.EventHandler(this.btnAddContact_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(76, 24);
+            this.toolStripButton2.Text = "بروزرسانی";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // btnupdate
+            // 
+            this.btnupdate.Location = new System.Drawing.Point(696, 547);
+            this.btnupdate.Name = "btnupdate";
+            this.btnupdate.Size = new System.Drawing.Size(75, 29);
+            this.btnupdate.TabIndex = 3;
+            this.btnupdate.Text = "ویرایش";
+            this.btnupdate.UseVisualStyleBackColor = true;
+            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
+            // 
+            // btndelete
+            // 
+            this.btndelete.Location = new System.Drawing.Point(603, 547);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(87, 29);
+            this.btndelete.TabIndex = 4;
+            this.btndelete.Text = "حذف";
+            this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
+            // 
             // ContactID
             // 
             this.ContactID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -102,7 +173,7 @@
             this.ContactID.Name = "ContactID";
             this.ContactID.ReadOnly = true;
             this.ContactID.Visible = false;
-            this.ContactID.Width = 125;
+            this.ContactID.Width = 72;
             // 
             // MyName
             // 
@@ -151,77 +222,6 @@
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnAddContact,
-            this.toolStripButton2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(783, 27);
-            this.toolStrip1.TabIndex = 2;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // btnAddContact
-            // 
-            this.btnAddContact.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnAddContact.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnAddContact.Image = ((System.Drawing.Image)(resources.GetObject("btnAddContact.Image")));
-            this.btnAddContact.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAddContact.Name = "btnAddContact";
-            this.btnAddContact.Size = new System.Drawing.Size(109, 24);
-            this.btnAddContact.Text = "افزودن مخاطب";
-            this.btnAddContact.Click += new System.EventHandler(this.btnAddContact_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(76, 28);
-            this.toolStripButton2.Text = "بروزرسانی";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // btnupdate
-            // 
-            this.btnupdate.Location = new System.Drawing.Point(696, 547);
-            this.btnupdate.Name = "btnupdate";
-            this.btnupdate.Size = new System.Drawing.Size(75, 29);
-            this.btnupdate.TabIndex = 3;
-            this.btnupdate.Text = "ویرایش";
-            this.btnupdate.UseVisualStyleBackColor = true;
-            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
-            // 
-            // btndelete
-            // 
-            this.btndelete.Location = new System.Drawing.Point(603, 547);
-            this.btndelete.Name = "btndelete";
-            this.btndelete.Size = new System.Drawing.Size(87, 29);
-            this.btndelete.TabIndex = 4;
-            this.btndelete.Text = "حذف";
-            this.btndelete.UseVisualStyleBackColor = true;
-            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(699, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "جستوجو :";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(292, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(401, 23);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -260,14 +260,14 @@
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.Button btnupdate;
         private System.Windows.Forms.Button btndelete;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ContactID;
         private System.Windows.Forms.DataGridViewTextBoxColumn MyName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Family;
         private System.Windows.Forms.DataGridViewTextBoxColumn Age;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mobile;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
     }
 }
 
